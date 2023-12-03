@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['scratch.py', 'part_one.py', 'test_part_one.py']
+recent_files = ['scratch.py', 'part_one.py', 'test_part_one.py', 'part_two.py', 'answer_history.txt', 'part_two_test.py']
 
 [main]
 version = 0.2.0
