@@ -16,6 +16,8 @@ example_schematic = ['467..114..',
                      '...$.*....',
                      '.664.598..']
 
+
+
 class TestCheckWhetherSymbol:
     
     def test_multiple(self):

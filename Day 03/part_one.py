@@ -13,11 +13,12 @@ def check_whether_part_number(number_description,
                            number_description['row'] + 2):
         for col_index in range(number_description['first_column'] - 1,
                                number_description['last_column'] + 2):
-            try:
-                if check_whether_symbol(schematic[row_index][col_index]):
-                    number_is_part_number = True
-            except:
-                pass
+            if (row_index >= 0 and
+                row_index <= len(schematic) - 1 and
+                col_index >= 0 and
+                col_index <= len(schematic[0]) - 1):
+                    if check_whether_symbol(schematic[row_index][col_index]):
+                        number_is_part_number = True
     return number_is_part_number
             
                         
@@ -41,7 +42,6 @@ def check_whether_symbol(character):
 def process_line(line_index, schematic):
     part_number_running_total = 0
     current_line = schematic[line_index]
-    #for index in range(len(current_line)):
     index = 0
     while index < len(current_line):
         if current_line[index].isdigit():
@@ -58,7 +58,6 @@ def process_line(line_index, schematic):
                                          schematic):
                 part_number = int(current_line[first_index:last_index + 1])
                 part_number_running_total += part_number
-                print(f"Found part number! {part_number}")
             index = last_index + 1
         else:
             index += 1
